@@ -1,0 +1,40 @@
+@if(cargando){
+    <app-cargando></app-cargando>
+}
+<div class="login_container">
+    <div class="login_frame">
+        <div class="login_logo">
+            <img width="70%" src="../assets/logo.svg" alt="">
+        </div>
+        <div class="login_form">
+            <div class="login_form_title">
+                <h2>Registrarse</h2>
+            </div>
+            <div class="login_form_inputs">
+                <label for="usename">Usename</label>
+                <input [formControl]="usernameform" class="" type="text">
+                @if (!usernameform.value) {
+                    <span style="font-size: 11px; color: #19AACD;" >* Campo obligatorio</span>
+                }
+            </div>
+            <div class="login_form_inputs">
+                <label for="usename">Password</label>
+                <input [formControl]="passwordform" class="" type="text">
+                @if (!passwordform.value) {
+                    <span style="font-size: 11px; color: #19AACD;" >* Campo obligatorio</span>
+                }
+            </div>
+            <div class="login_form_inputs">
+                <label for="email">E-mail</label>
+                <input [formControl]="emailform" class="" type="text">
+                @if (!emailform.value) {
+                    <span style="font-size: 11px; color: #19AACD;" >* Campo obligatorio</span>
+                }
+            </div>
+            <div class="login_form_inputs">
+                <button class="login_boton" type="text" (click)="registrar()" [disabled]="usernameform.invalid || passwordform.invalid || emailform.invalid">Registrase</button>
+            </div>
+            
+        </div>
+    </div>
+</div>

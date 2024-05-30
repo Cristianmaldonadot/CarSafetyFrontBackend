@@ -1,0 +1,34 @@
+<div class="content_header">
+    <div class="header">
+      <div class="logo" (click)="verHome()">
+        <img width="100%" src="../assets/logo.svg" alt="">
+      </div>
+      <div class="header_myaccount">
+        <h4>Hola, 
+          {{usuarioAPI.username}}
+        </h4>
+        <div class="header_image" (click)="verMenuPerfil()">
+          <img height="100%" src="{{usuarioAPI.fotoPerfil}}" alt="">
+        </div>
+      </div>
+      @if (verMenu) {
+        <div class="header_menu_perfil">
+          <div class="header_menu_perfil_items" (click)="verProfile()" >
+            <div class="header_image">
+              <img height="100%" src="{{usuarioAPI.fotoPerfil}}" alt="">
+            </div>
+            <h3>{{usuarioAPI.username}}</h3>
+          </div>
+          <div class="header_menu_perfil_items">
+            <img src="../assets/bx-user.svg" alt="">
+            <h3>Mis Datos</h3>
+          </div>
+          <div class="header_menu_perfil_items" (click)="cerrarSesion()">
+            <img src="../assets/bx-log-out.svg" alt="">
+            <h3>Cerrar Sesión</h3>
+          </div>
+        </div>
+      }
+    </div>
+      
+</div>

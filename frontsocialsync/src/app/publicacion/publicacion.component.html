@@ -1,0 +1,120 @@
+<div class="container">
+    <!-- @for (usu of usuariosAPI; track usu.idUsuario) { -->
+    @for (publi of publicacionesAPI; track $index) {
+    <div class="container_publicacion">
+        <div class="publi_header">
+            <div class="publi_imagen_name">
+                <div class="publi_imagen_user">
+                    <img height="100%" src={{publi.usuario?.fotoPerfil}} alt="">
+                </div>
+                <div class="publi_user">
+                    <h3 style="font-weight: 700;">{{publi.usuario?.username}}</h3>
+                    <h6>{{publi.tiempoTranscurrido}}</h6>
+                </div>
+            </div>
+            @if (idusuparaeliminar === publi.usuario?.idUsuario) {
+                <div class="eliminar_publi" (click)="eliminarPublicacion(publi.id)" onclick="return confirm('¿Estás seguro que deseas eliminar publicacion?')">
+                    <img height="70%" src="../assets/bxs-trash.svg" alt="">
+                </div>
+            }
+        </div>
+        <div class="publi_text">
+            <p class="publi_content">{{publi.titulo}}</p>
+        </div>
+        <div class="publi_image">
+            <img src={{publi.imagen}} alt="">
+        </div>
+        <div class="public_counterlike">
+            <div class="publi_counterlike_image">
+                <img width="55%" height="55%" src="../assets/bxs-like3.svg" alt="">
+            </div>
+            <span>{{publi.megustas.length}}</span>
+            <div class="public_counterlike_list">
+                @for (megusta of publi.megustas; track megusta.id) {
+                    <h5>{{megusta.usuario.username}}</h5>
+                }
+            </div>
+        </div>
+        
+            @if (siexiste[$index] == true) {
+                <div class="publi_like">
+                    <button class="publi_boton disable" (click)="eliminarMegusta(idsmegustas[$index])">
+                        <img width="100%" height="100%" src="../assets/bx-like2.svg" alt="">
+                        <h4>No me gusta</h4>
+                    </button>
+                </div>
+            
+            }@else {
+                <div class="publi_like" >
+                    <button class="publi_boton" (click)="createMegusta(publi.id,usuarioAPI)">
+                        <img width="100%" height="100%" src="../assets/bx-like2.svg" alt="">
+                        <h4>Me gusta</h4>
+                    </button>
+                </div>
+            }
+        
+            
+                
+                    
+                        
+                    
+                    
+                        <!-- <div class="publi_like" >
+                            <button class="publi_boton" (click)="createMegusta(publi.id,usuarioAPI)">
+                                <img width="100%" height="100%" src="../assets/bx-like2.svg" alt="">
+                                <h4>Me gusta</h4>
+                            </button>
+                        </div> -->
+                    
+                
+                <!-- @if (megu.usuario.idUsuario === usuarioAPI.idUsuario) {
+                    <div class="publi_like">
+                        <button class="publi_boton" (click)="eliminarMegusta(idMegusta)">
+                            <img width="100%" height="100%" src="../assets/bx-like2.svg" alt="">
+                            <h4>No me gusta</h4>
+                        </button>
+                    </div>
+                } -->
+            
+            
+                <!-- @if (!usuarioYaDioMeGusta(megu)) {
+                    <div class="publi_like" >
+                        <button class="publi_boton" (click)="createMegusta(publi.id,usuarioAPI)">
+                            <img width="100%" height="100%" src="../assets/bx-like2.svg" alt="">
+                            <h4>Me gusta</h4>
+                        </button>
+                    </div>
+                }  -->
+                    
+        <div class="publi_coments">
+            @for (coment of publi.comentarios; track coment.idComentario) {
+            <div class="publi_coments_header">
+                <div class="publi_getcoment_imagen_user">
+                    <img height="100%" src={{coment.usuario.fotoPerfil}} alt="">
+                </div>
+                <div>
+                    <div class="publi_coment_user">
+                        <h4 style="font-weight: 700;">{{coment.usuario.username}}</h4>
+                        <h4 style="font-weight: 300; font-size: 15px;">{{coment.contenido}}</h4>
+                    </div>
+                    <div class="publi_coments_time">
+                        <h6>Hace: {{coment.tiempoTranscurrido}}</h6>
+                    </div>
+                </div>
+                
+            </div>
+            
+        }
+        </div>
+        <div class="publi_getcoment">
+            <div class="publi_getcoment_imagen_user">
+                <img src={{usuarioAPI.fotoPerfil}} alt="">
+            </div>
+            <input id="message_input" class="publi_getcoment_text" placeholder="Escribe un comentario..." [formControl]="comentarioform">
+                
+            <input class="publi_boton publi_getcoment_boton" type="button" value="Enviar" (click)="createComent(publi,usuarioAPI)">
+        </div>
+    </div>
+    }
+<!-- } -->
+</div>

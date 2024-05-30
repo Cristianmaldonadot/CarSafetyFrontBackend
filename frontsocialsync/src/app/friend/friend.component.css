@@ -1,0 +1,199 @@
+.friend_content{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+    background-color: #11192C;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 25px;
+    gap: 10px;
+    transition: background-color 0.5s ease;
+}
+.onclick{
+    cursor: pointer;
+}
+.onclick:hover{
+    background-color: #4b23c5;
+}
+
+.header_menu_perfil_items{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    width: 245px;
+    height: 55px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.header_menu_perfil_items:hover{
+    background-color: #1c1f38;
+}
+.header_image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: aliceblue;
+}
+.modal{
+    display: flex;
+    position: relative;
+    width: 500px;
+    height: 350px;
+    background-color: #1c1f38;
+    border-radius: 25px;
+}
+
+.publicacion_container{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    z-index: 990;
+}
+.publicacion_frame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 650px;
+    height: 750px;
+    background-color: #20233e;
+    border-radius: 35px;
+}
+.publicacion_logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 550px;
+    height: 100px;
+}
+.publicacion_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    height: 50px;
+}
+
+.publicacion_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 650px;
+    height: 600px;
+}
+.publicacion_form_inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.publicacion_form_inputs input{
+    width: 450px;
+    height: 45px;
+    padding-left: 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    font-size: 20px;
+    color: #20233e;
+}
+.publicacion_form_inputs input:focus{
+    outline: none;
+}   
+
+.publicacion_boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    gap: 10px;
+    width: 180px;
+    height: 50px;
+    background-color: #11192C;
+    border: solid 1.5px;
+    border-radius: 25px;
+    border-color: #36394c;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+.publicacion_boton:hover{
+    background-color: #4829a4;
+}
+.cerrar{
+    width: 35px;
+    height: 35px;
+}
+.publicacion_registrarse{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.contenedor_modal{
+    display: flex;
+    justify-content: center;
+    left: 0px;
+    top: 0px;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00000089;
+    
+}
+
+.publicacion_form_contenedor{
+    width: 600px;
+    height: 470px;
+}
+.publicacion_form_inputs_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 350px;
+    background-color: #11192C;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+.input-file-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4829a4;
+    width: 200px;
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+.publicacion_form_inputs_texarea{
+    font-size: 16px;
+    height: 120px;
+    background-color: #11192C;
+    border: none;
+    resize: none;
+    padding: 20px;
+    outline: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .publicacion_form_buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    height: 100px;
+  }

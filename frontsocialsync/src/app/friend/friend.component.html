@@ -1,0 +1,65 @@
+<div class="friend_content">
+    <div class="friend_title">
+        <h2 style="font-weight: 700;">Amigos</h2>
+    </div>
+    @if (usuarioAPI.amigos?.length === 0) {
+        <h4>No tienes amigos</h4>
+    }
+    @for (amig of usuarioAPI.amigos; track amig.idUsuario) {
+        <div class="header_menu_perfil_items" (click)="iralperfil(amig.idUsuario)">
+            <div class="header_image">
+              <img height="100%" src={{amig.fotoPerfil}} alt="">
+            </div>
+            <h3>{{amig.username}}</h3>
+          </div>
+    }
+    @if (mostrarModalCrearPublicacion) {
+    <div class="contenedor_modal">
+    <div class="publicacion_container">
+        <div class="publicacion_frame">
+            <div class="publicacion_logo">
+                <img width="30%" src="../assets/logo.svg" alt="">
+                <button class="publicacion_boton cerrar" (click)="mostrarModal()">X</button>
+            </div>
+            <div class="publicacion_title">
+                <h2>Crear Publicacion</h2>
+            </div>
+            <div class="publicacion_form">
+                <div class="publicacion_form_contenedor">
+                    <div class="publicacion_form_inputs">
+                        <textarea [formControl]="tituloform" class="publicacion_form_inputs_texarea" type="text" placeholder="Contenido publicacion..."></textarea>
+                    </div>
+                    <div class="publicacion_form_inputs_image">
+                        @if(imagenSeleccionadaPublicacion == null){
+                            <div class="publicacion_form_inputs">
+                                <label for="upload_file" class="input-file-label">Seleccionar Imagen</label>
+                                <input [formControl]="imagenform" style="display: none;" class="upload_file" id="upload_file" type="file" accept="image/png, image/jpeg" (change)="onFileSelected($event)">
+                            </div>
+                        }
+                        @if (imagenSeleccionadaPublicacion) {
+                            <img width="100%" height="100%" [src]="imagenURL" alt="Imagen seleccionada">
+                        }
+                    </div>
+                </div>
+                <div class="publicacion_form_buttons" >
+                    <div class="publicacion_form_inputs">
+                        <button class="publicacion_boton" type="text" (click)="mostrarModal()" >Cancelar</button>
+                    </div>
+                    <div class="publicacion_form_inputs">
+                        <button class="publicacion_boton" type="text" [disabled]="tituloform.invalid || imagenform.invalid " (click)="crearPublicacion()">Crear Publicación</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+</div>
+<div class="friend_content onclick" (click)="mostrarModal()">
+    <div class="friend_title">
+        <h2 style="font-weight: 700;">Crear Publicacion</h2>
+    </div>
+</div>
+
+
+

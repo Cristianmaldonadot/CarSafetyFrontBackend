@@ -1,0 +1,30 @@
+@if (cargando) {
+    <app-cargando></app-cargando>
+}
+<div class="login_container">
+    <div class="login_frame">
+        <div class="login_logo">
+            <img width="70%" src="../assets/logo.svg" alt="">
+        </div>
+        <div class="login_form">
+            <div class="login_form_title">
+                <h2>Iniciar Sesión</h2>
+            </div>
+            <div class="login_form_inputs">
+                <label for="usename">Usename</label>
+                <input [formControl]="usernameform" class="" type="text">
+            </div>
+            <div class="login_form_inputs">
+                <label for="usename">Password</label>
+                <input [formControl]="passwordform" class="" type="password">
+            </div>
+            <div class="login_form_inputs">
+                <button class="login_boton" type="text" (click)="login()">INGRESAR</button>
+            </div>
+            <div class="login_registrarse">
+                <a routerLink="/registrar">Registrarse</a>
+            </div>
+            
+        </div>
+    </div>
+</div>

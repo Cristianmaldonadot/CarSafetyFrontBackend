@@ -1,0 +1,10 @@
+.cargando{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.703);
+    z-index: 999;
+}

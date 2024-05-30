@@ -1,0 +1,68 @@
+<div class="menuaction_content">
+    <div class="solipend_container">
+        <div class="menuaction_title">
+            <h4 style="font-weight: 700;">Solicitudes Pendientes</h4>
+        </div>
+        @if (solicitudRecibidaAPI.length ===0) {
+            <h4 style="color: #36394c ;">No tienes solicitudes pendientes</h4>
+        }@else {
+            @for (solic of solicitudRecibidaAPI; track solic.id) {
+                <div class="solipend_item">
+                    <div class="usersmundo_container_image_title">
+                        <div class="usersmundo_image">
+                            <img height="100%" src={{solic.usuarioEnviador.fotoPerfil}} alt="">
+                          </div>
+                          <h5>{{solic.usuarioEnviador.username}}</h5>
+                    </div>
+                    <div class="usersmundo_container_boton">
+                        <button class="usersmundo_boton" (click)="aceptarSolicitud(solic.usuarioEnviador.idUsuario, solic.id)"><h5>Aceptar Solicitud</h5></button>
+                    </div>
+                    <div class="usersmundo_container_boton">
+                        <button class="usersmundo_boton rechazar" (click)="cancelarSolicitud(solic.usuarioEnviador.idUsuario, solic.usuarioReceptor.idUsuario, solic.id)"><h5>Rechazar Solicitud</h5></button>
+                    </div>
+                </div>
+            }
+        
+        }
+    </div>
+    <div class="solipend_container">
+        <div class="menuaction_title">
+            <h4 style="font-weight: 700;">Solicitudes Enviadas</h4>
+        </div>
+        @if (solicitudEnviadasAPI.length === 0) {
+            <h4 style="color: #36394c ;">No tienes solicitudes enviadas</h4>
+        }@else {
+            @for (solic of solicitudEnviadasAPI; track solic.id) {
+                <div class="solipend_item">
+                    <div class="usersmundo_container_image_title">
+                        <div class="usersmundo_image">
+                            <img height="100%" src={{solic.usuarioReceptor.fotoPerfil}} alt="">
+                        </div>
+                        <h5>{{solic.usuarioReceptor.username}}</h5>
+                    </div>
+                    <div class="usersmundo_container_boton">
+                        <button class="usersmundo_boton" (click)="cancelarSolicitud(solic.usuarioEnviador.idUsuario, solic.usuarioReceptor.idUsuario, solic.id)"><h5>Cancelar Solicitud</h5></button>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div class="solipend_container">
+    <div class="menuaction_title">
+        <h4 style="font-weight: 700;">Sugerencias</h4>
+    </div>
+    @for (user of usuariosAPI; track user.idUsuario) {
+        <div class="usersmundo_item">
+            <div class="usersmundo_container_image_title" (click)="iralperfil(user.idUsuario)">
+                <div class="usersmundo_image">
+                    <img height="100%" src={{user.fotoPerfil}} alt="">
+                  </div>
+                  <h5>{{user.username}}</h5>
+            </div>
+            <div class="usersmundo_container_boton">
+                <button class="usersmundo_boton" (click)="enviarSolicitud(user.idUsuario)"><h5>Enviar Solicitud</h5></button>
+            </div>
+        </div>
+    }
+    </div>
+</div>

@@ -1,0 +1,100 @@
+@if(cargando){
+    <app-cargando></app-cargando>
+}
+<app-header [usuarioAPI]="usuarioAPI"></app-header>
+
+<div class="profile_body">
+    <div class="profile_content">
+        <div class="profile_porta">
+            <img width="100%" src="{{usuarioAPI.fotoPortada}}" alt="">
+        </div>
+        <div class="profile_porta_boton" (click)="mostrarModalPortada()">
+            <img src="../assets/bx-image-add.svg" alt="">
+            <h4>Editar Portada</h4>
+        </div>
+        <div class="profile_perfil">
+            <div class="profile_imagen">
+                <img height="100%" src="{{usuarioAPI.fotoPerfil}}" alt="">
+                
+            </div>
+            <div class="profile_perfil_boton" (click)="mostrarModalPerfil()">
+                <img src="../assets/bxs-camera-plus.svg" alt="">
+            </div>
+        </div>
+        <div class="profile_name">
+            <h1 style="font-weight: 800;">{{usuarioAPI.username}}</h1>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center; ">
+        @if(usuarioAPI.username){
+            <app-publicacionuser [usuarioAPI]="usuarioAPI" ></app-publicacionuser>
+        }
+    </div>
+    @if (mostrarSubirPortada) {
+        <div class="contenedor_modal">
+        <div class="login_container">
+            <div class="login_frame">
+                <div class="login_logo">
+                    <img width="30%" src="../assets/logo.svg" alt="">
+                    <button class="login_boton cerrar" (click)="mostrarModalPortada()">X</button>
+                </div>
+                <div class="login_form">
+                    <div class="login_form_title">
+                        <h2>Subir Portada</h2>
+                    </div>
+                    <div class="login_form_inputs_portada">
+                        <label for="upload_file" class="input-file-label">Seleccionar Imagen</label>
+                        <input [formControl]="imagesform" style="display: none;" class="upload_file" id="upload_file" type="file" accept="image/png, image/jpeg" (change)="onFileSelected($event)">
+                        <div class="upload_image_content">
+                            @if (imagenSeleccionadaPortada) {
+                                <img width="100%" height="100%" [src]="imagenURL" alt="Imagen seleccionada">
+                            }
+                        </div>
+                    </div>
+                    <div class="login_form_inputs_portada">
+                        <button class="login_boton" (click)="guardarImagen()">Guardar</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    @if (mostrarSubirPerfil) {
+        <div class="contenedor_modal">
+        <div class="login_container">
+            <div class="login_frame">
+                <div class="login_logo">
+                    <img width="30%" src="../assets/logo.svg" alt="">
+                    <button class="login_boton cerrar" (click)="mostrarModalPerfil()">X</button>
+                </div>
+                <div class="login_form">
+                    <div class="login_form_title">
+                        <h2>Actualizar Foto Perfil</h2>
+                    </div>
+                    <div class="login_form_inputs">
+                        <label for="upload_file" class="input-file-label">Seleccionar Imagen</label>
+                        <input [formControl]="imagesformPerfil" style="display: none;" class="upload_file" id="upload_file" type="file" accept="image/png, image/jpeg" (change)="onFileSelectedPerfil($event)">
+                    
+                        <div class="upload_image_content_perfil" #content (mousedown)="startDragging($event)" (mousemove)="drag($event)" (mouseup)="stopDragging()" (mouseleave)="stopDragging()">
+                            @if (imagenSeleccionadaPerfil) {
+                                <img class="image" height="100%" [src]="imagenURL" alt="Imagen seleccionada">
+                            }
+                        </div>
+                        <div class="upload_image_content_limit">
+                            <div class="arrastre_recortar" >
+                                <h5>Arrastre para recortar</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login_form_inputs_boton">
+                        <button class="login_boton" (click)="guardarFotoPerfil()">Guardar</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    
+</div>

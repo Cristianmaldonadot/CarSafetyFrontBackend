@@ -1,0 +1,34 @@
+.content_header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    background-color: #11192C;
+    border-radius: 15px;
+}
+.logo{
+    width: 250px;
+}
+.header_myaccount{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+    width: 230px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #20233e;
+}
+.header_image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+

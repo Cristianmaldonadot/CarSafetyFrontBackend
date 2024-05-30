@@ -1,0 +1,216 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+.container_publicacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    width: 700px;
+    height: auto;
+    border-radius: 20px;
+    background-color: #11192C;
+    gap: 10px;
+}
+.publi_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 650px;
+    height: 60px;
+    margin-top: 20px;
+    gap: 15px;
+}
+.publi_imagen_name{
+    display: flex;
+    gap: 15px;
+}
+.publi_user{
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    margin-top: 5px;
+}
+.publi_imagen_user{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    overflow: hidden;
+}
+.publi_imagen_user img{
+    height: 100%;
+}
+.publi_text{
+    display: flex;
+    width: 650px;
+    height: auto;
+}
+.publi_content{
+    display: -webkit-box;
+    -webkit-line-clamp: inherit; /* Limita el texto a tres líneas */
+    -webkit-box-orient: vertical;
+    width: 650px;
+    height: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 200;
+    font-size: 14px;
+    text-align: justify;
+}
+.publi_image{
+    display: flex;
+    width: 700px;
+    height: auto;
+    max-height: 650px;
+    overflow: hidden;
+    background-color: #20233e;
+}
+.publi_image img{
+    width: 100%;
+}
+.public_counterlike{
+    display: flex;
+    align-items: center;
+    width: 650px;
+    height: 30px;
+    gap: 10px;
+    cursor: pointer;
+}
+.publi_counterlike_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+.public_counterlike_list{
+    display: none;
+    top: 40px;
+    left: -55px;
+    position: relative;
+    flex-direction: column;
+    width: 150px;
+    height: auto;
+    opacity: 0;
+    border-radius: 15px;
+    background-color: #36394c;
+    padding: 10px;
+    transition: height 0.5s, opacity 0.5s;
+}
+.public_counterlike:hover .public_counterlike_list{
+    display: flex;
+    opacity:1;
+}
+.publi_like{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 650px;
+    height: 60px;
+    border-bottom: solid 1px;
+    border-top: solid 1px;
+    border-color: #2b2e44;
+}
+.publi_boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 130px;
+    height: 35px;
+    background-color: #11192C;
+    border: solid 1.5px;
+    border-radius: 25px;
+    border-color: #36394c;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+.disable{
+    background-color: rgb(55, 18, 90);
+}
+.publi_boton:hover{
+    background-color: rgb(55, 18, 90);
+}
+.publi_boton img{
+    width: 20px;
+    height: 20px;
+}
+.publi_coments{
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+    height: auto;
+    gap: 15px;
+}
+.publi_coments_header{
+    display: flex;
+    gap: 10px;
+}
+.publi_coment_user{
+    display: flex;
+    flex-direction: column;
+    background-color: #20233e;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    gap: 5px;
+    max-width: 495px;
+}
+.publi_coments_time{
+    padding-left: 15px;
+    padding-top: 5px;
+}
+.publi_getcoment{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    width: 650px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.publi_getcoment_imagen_user{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    overflow: hidden;
+}
+.publi_getcoment_imagen_user img{
+    height: 100%;
+}
+.publi_getcoment_text{
+    width: 505px;
+    height: 38px;
+    padding-left: 20px;
+    font-size: 16px;
+    background-color: #20233e;
+    border-radius: 25px;
+    border: none;
+}
+.publi_getcoment_text:focus{
+    outline: none;
+}
+.publi_getcoment_boton{
+    width: 80px;
+}
+
+.eliminar_publi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: #36394c;
+    border-radius: 50%;
+    cursor: pointer;
+}

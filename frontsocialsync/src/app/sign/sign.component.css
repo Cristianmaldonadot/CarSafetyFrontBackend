@@ -1,0 +1,75 @@
+.login_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}
+.login_frame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 650px;
+    height: 600px;
+    background-color: #20233e;
+    border-radius: 35px;
+}
+.login_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 650px;
+    height: 110px;
+}
+.login_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 650px;
+    height: 370px;
+}
+.login_form_inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.login_form_inputs input{
+    width: 450px;
+    height: 55px;
+    padding-left: 20px;
+    font-size: 16px;
+    background-color: #2b2e44;
+    border-radius: 25px;
+    border: none;
+    font-size: 20px;
+}
+.login_form_inputs input:focus{
+    outline: none;
+}   
+
+.login_boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    gap: 10px;
+    width: 150px;
+    height: 50px;
+    background-color: #11192C;
+    border: solid 1.5px;
+    border-radius: 25px;
+    border-color: #36394c;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+.login_boton:hover{
+    background-color: #4829a4;
+}
+.login_registrarse{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+}
